@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MollyKao - Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-banner">
+    <img src="MollyKao.png" class="logo-molly">
+    <div class="banner-right">
+        <span onclick="location.href='#dracox'">DRACOX</span>
+        <span onclick="location.href='#kraxen'">KRAXEN</span>
+        <span onclick="location.href='#bolseus'">BOLSEUS</span>
+    </div>
+</div>
+
+<div id="fullscreen" class="fullscreen">
+    <iframe id="fullscreen-frame"></iframe>
+    <div class="close-btn" onclick="cerrarVista()">Volver atrás</div>
+</div>
+
+<iframe id="pre_dracox" class="preload-full" src="https://www.canva.com/design/DAHNhV8JFRA/Hu1RyuTz2UBY5TB7X0qRpQ/view?embed"></iframe>
+<iframe id="pre_kraxen" class="preload-full" src="https://www.canva.com/design/DAHNhtzM61U/H3eLX702NGH0VbupDfwRLw/view?embed"></iframe>
+<iframe id="pre_bolseus" class="preload-full" src="https://www.canva.com/design/DAHNhc-VdPE/zbXnrSjnWD70peYoipmVbA/view?embed"></iframe>
+
+<section id="dracox">
+    <h1>DRACOX</h1>
+    <div class="price-box">Precio: 2 €</div>
+    <div class="btn" onclick="verProducto('pre_dracox')">Ver DRACOX</div>
+</section>
+
+<section id="kraxen">
+    <h1>KRAXEN</h1>
+    <div class="price-box">Precio: 2,50 €</div>
+    <div class="btn" onclick="verProducto('pre_kraxen')">Ver KRAXEN</div>
+</section>
+
+<section id="bolseus">
+    <h1>BOLSEUS</h1>
+    <div class="price-box">Precio: 2 €</div>
+    <div class="btn" onclick="verProducto('pre_bolseus')">Ver BOLSEUS</div>
+</section>
+
+<footer>
+    MollyKao - JGT
+</footer>
+
+<script>
+    function verProducto(id) {
+        const pantalla = document.getElementById("fullscreen");
+        const frame = document.getElementById("fullscreen-frame");
+        const preloadFrame = document.getElementById(id);
+        frame.src = preloadFrame.src;
+        pantalla.style.display = "flex";
+    }
+
+    function cerrarVista() {
+        const pantalla = document.getElementById("fullscreen");
+        const frame = document.getElementById("fullscreen-frame");
+        frame.src = "";
+        pantalla.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
